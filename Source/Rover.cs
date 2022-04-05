@@ -47,5 +47,27 @@ namespace MarsRovers
 
             }
         }
+        internal void Turn(string turnDirection)
+        {
+            turnDirection = (turnDirection.ToLower().Equals("r")) ? "right" : "left";
+
+            switch (_direction)
+            {
+                case "N":
+                    _direction = (turnDirection.Equals("right")) ? "E" : "W";
+                    break;
+                case "S":
+                    _direction = (turnDirection.Equals("right")) ? "W" : "E";
+                    break;
+                case "E":
+                    _direction = (turnDirection.Equals("right")) ? "S" : "N";
+                    break;
+                case "W":
+                    _direction = (turnDirection.Equals("right")) ? "N" : "S";
+                    break;
+
+
+            }
+        }
     }
 }
